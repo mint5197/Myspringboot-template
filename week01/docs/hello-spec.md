@@ -1,15 +1,16 @@
 # Hello 接口规格文档
 
 ## 1. 核心目标
-- 开发一个 Hello 接口，返回统一格式的欢迎信息，用于验证 Spring Boot 项目的基本配置是否正确。
+- 提供一个基础的测试接口，用于快速验证 Spring Boot 服务是否正常运行，返回标准化的欢迎消息。
 
 ## 2. 业务规则
-- 接口路径：GET /api/hello
-- 无需请求参数
-- 返回 JSON，包含 code、msg、data 三个字段
-- code 固定为 200，表示成功
-- msg 固定为 "success"
-- data 为欢迎语字符串，例如："Hello Spring Boot"
+- 请求方式：GET
+- 接口地址：/api/hello
+- 不需要携带任何参数
+- 响应格式为 JSON 结构，包含状态码、提示信息和业务数据
+- 状态码统一返回 200，表示请求成功
+- 提示信息固定为 "success"
+- 业务数据为欢迎语文本，例如："Hello Spring Boot"
 
 ## 3. 技术约束
 - 使用 Spring Boot 3.x
@@ -34,7 +35,7 @@
 
 ## 5. 验收标准
 
-- 项目能成功启动
-- 访问 /api/hello 返回 HTTP 状态码 200
-- 返回 JSON 结构中包含 code、msg、data 三个字段
-- data 字段内容为非空字符串，表达欢迎信息
+- 服务启动无异常
+- 调用接口返回 HTTP 状态码 200
+- 响应 JSON 必须包含 code、msg、data 三个字段
+- data 字段值为非空字符串，内容为欢迎语
